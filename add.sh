@@ -1,4 +1,7 @@
 #!/bin/bash
 # Add line to database
 
-echo 'add file run';
+echo "Please use format: Name:Address:Number:Email"
+read text
+echo "$text" >> 'database.txt'
+
