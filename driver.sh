@@ -1,4 +1,4 @@
-#!bin/bash
+#!/bin/bash
 # Driver file for Database Management System
 
 # Initialize empty contacts array
