@@ -1,5 +1,5 @@
 #!bin/bash
-#driver
+# Driver file for Database Management System
 
 # Initialize empty contacts array
 contacts=()

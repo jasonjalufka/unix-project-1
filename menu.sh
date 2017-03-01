@@ -5,15 +5,10 @@ source ./add.sh
 source ./find.sh
 source ./remove.sh
 source ./update.sh
+source ./interface.sh
+source ./utilities.sh
 
-echo 'Welcome to my contact database, please select in the following menu:
-(a) Find a new record
-(b) Add a new record
-(c) Update a record
-(d) Remove a record
-(e) Quit'
-
-read -r -p "Selection is: " selection
+displaymenu
 
 case $selection in
   [aA] ) echo "You chose a!" ;;
