@@ -26,7 +26,6 @@ printArray() {
 
 processSelection() {
   case "$1" in
-<<<<<<< HEAD
     [aA1] ) echo "You chose a (FIND)"
               ./find.sh ;;
     [bB2] ) echo "You chose b (ADD)"
@@ -34,14 +33,12 @@ processSelection() {
     [cC3] ) echo "You chose c (UPDATE)" ;;
     [dD4] ) echo "You chose d (REMOVE)"
               ./remove.sh ;;
-=======
     [aA1] ) echo "You chose a (FIND)" ;;
     [bB2] ) echo "You chose b (ADD)" 
             ./add.sh ;;
     [cC3] ) echo "You chose c (UPDATE)" ;;
     [dD4] ) echo "You chose d (REMOVE)" 
             ./remove.sh ;;
->>>>>>> bcff400eeabbd4ad61fd5a004a9f113bba026ad3
     [eE5] ) cat 'database.txt' ;;
     [fF6] ) cat 'deleted.txt' ;;
     [gG7] ) echo "Thank you. Goodbye" 

@@ -4,4 +4,5 @@
 printf '\n'
 echo "Whose records would you like to remove?"
 read delete
-sed -i /$delete/d 'database.txt'
+cat database.txt | grep ${delete} >> deleted.txt
+sed -i /${delete}/d 'database.txt'
