@@ -17,4 +17,7 @@ loadArray
 printArray
 
 #displays menu from interface.sh
-mainSelection
+clear
+while [ $? -ne 1 ]; do
+  mainSelection
+done
