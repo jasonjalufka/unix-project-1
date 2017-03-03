@@ -3,8 +3,10 @@
 
 echo "Whose records need to be updated?"
 read update
-sed -i /${update}/d 'database.txt'
-echo "Please input the updated complete field:"
-read nuField
-echo "$nuField" >> 'database.txt'
-cat 'database.txt'
+if grep -Fq ${update} database.txt
+  then
+    sed -i /${update}/d 'database.txt'
+    ./add.sh
+else
+  echo "No match found. Note the database is case sensitive."
+fi
