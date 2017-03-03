@@ -2,7 +2,7 @@
 # Driver file for Database Management System
 
 # Initialize empty contacts array
-contacts=()
+contactsArray=()
 
 #source ./add.sh
 #source ./find.sh
