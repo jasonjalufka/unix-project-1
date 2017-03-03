@@ -30,7 +30,8 @@ processSelection() {
               ./find.sh ;;
     [bB2] ) echo "You chose b (ADD)"
               ./add.sh ;;
-    [cC3] ) echo "You chose c (UPDATE)" ;;
+    [cC3] ) echo "You chose c (UPDATE)" 
+              ./update.sh ;;
     [dD4] ) echo "You chose d (REMOVE)"
               ./remove.sh ;;
     [eE5] ) cat 'database.txt' ;;

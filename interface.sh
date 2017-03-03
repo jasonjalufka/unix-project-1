@@ -10,7 +10,7 @@ mainSelection() {
 (e) View current records
 (f) View deleted records
 (g) Quit
-Selection is >" selection
+Selection is > " selection
 
 # Calls function in utilities.sh to take appropriate action on user choice
 processSelection "$selection"
