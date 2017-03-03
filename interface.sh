@@ -1,4 +1,4 @@
-#!/bin/bash
+#/bin/bash
 source ./utilities.sh
 
 mainSelection() {
@@ -13,5 +13,6 @@ clear
 (g) Quit
 Selection is >" selection
 
+# Calls function in utilities.sh to take appropriate action on user choice
 processSelection "$selection"
 }
