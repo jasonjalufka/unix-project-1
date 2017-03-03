@@ -20,9 +20,11 @@ printArray() {
 processSelection() {
   case "$1" in
     [aA1] ) echo "You chose a (FIND)" ;;
-    [bB2] ) echo "You chose b (ADD)" ./add.sh ;;
+    [bB2] ) echo "You chose b (ADD)" 
+            ./add.sh ;;
     [cC3] ) echo "You chose c (UPDATE)" ;;
-    [dD4] ) echo "You chose d (REMOVE)" ./remove.sh ;;
+    [dD4] ) echo "You chose d (REMOVE)" 
+            ./remove.sh ;;
     [eE5] ) cat 'database.txt' ;;
     [fF6] ) cat 'deleted.txt' ;;
     [gG7] ) echo "Thank you. Goodbye" 
