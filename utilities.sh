@@ -33,16 +33,21 @@ processSelection() {
     [cC3] ) echo "You chose c (UPDATE)" ;;
     [dD4] ) echo "You chose d (REMOVE)"
               ./remove.sh ;;
-    [aA1] ) echo "You chose a (FIND)" ;;
-    [bB2] ) echo "You chose b (ADD)" 
-            ./add.sh ;;
-    [cC3] ) echo "You chose c (UPDATE)" ;;
-    [dD4] ) echo "You chose d (REMOVE)" 
-            ./remove.sh ;;
     [eE5] ) cat 'database.txt' ;;
     [fF6] ) cat 'deleted.txt' ;;
     [gG7] ) echo "Thank you. Goodbye" 
               return 1 ;; #exit main menu loop
   esac  
   return 0; #continue looping main menu
+}
+
+processFind() {
+  case "$1" in
+    [aA1] ) echo "You chose 1 (Name)";;
+    [bB2] ) echo "You chose 2 (Address)";;
+    [cC3] ) echo "You chose 3 (Phone)" ;;
+    [dD4] ) echo "You chose 4 (Email)";;
+    [eE5] ) echo "You chose 5 (Keyword)" ;;
+    [fF6] ) echo "You chose 6 (CANCEL)" ;;
+  esac
 }
