@@ -34,15 +34,6 @@ processSelection() {
               ./update.sh ;;
     [dD4] ) echo "You chose d (REMOVE)"
               ./remove.sh ;;
-<<<<<<< HEAD
-    [aA1] ) echo "You chose a (FIND)" ;;
-    [bB2] ) echo "You chose b (ADD)" 
-              ./add.sh ;;
-    [cC3] ) echo "You chose c (UPDATE)" ;;
-    [dD4] ) echo "You chose d (REMOVE)" 
-              ./remove.sh ;;
-=======
->>>>>>> master
     [eE5] ) cat 'database.txt' ;;
     [fF6] ) cat 'deleted.txt' ;;
     [gG7] ) echo "Thank you. Goodbye" 
