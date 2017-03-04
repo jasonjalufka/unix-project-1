@@ -53,12 +53,11 @@ search() {
   if [[ $searchField == keyword ]]; then
     # search entire line
     for i in "${contactsArray[@]}"; do
-      echo "Searching at $i"
       IFS= read -r temp <<< "$i"
       shopt -s nocasematch
       if [[ "${temp}" == *"$search"* ]]; then
         count=$(( count + 1 ))
-        
+        #TODO add line to matches array 
       fi
       index=$(( index + 1 ))
     done
