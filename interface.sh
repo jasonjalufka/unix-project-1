@@ -1,5 +1,5 @@
 #/bin/bash
-source ./utilities.sh
+# interface.sh file
 
 mainSelection() {
   read -r -p "Welcome to my contact database, please select one of the following options:
@@ -12,19 +12,22 @@ mainSelection() {
 (g) Quit
 Selection is >" selection
 
-# Calls function in utilities.sh to take appropriate action on user choice
 processSelection "$selection"
 }
 
-findRecordSelection() {
-  read -r -p "Choose how you would like to search for a record::
-  (1) Name
-  (2) Address
-  (3) Phone Number
-  (4) Email
-  (5) Keyword
-  (6) CANCEL
-  Selection is >" selection
-
-  processFind "$selection"
+processSelection() {
+  case "$1" in
+    [aA1] ) echo "You chose a (FIND)" 
+            clear
+            findRecord ;;
+    [bB2] ) echo "You chose b (ADD)" ;;
+    [cC3] ) echo "You chose c (UPDATE)" ;;
+    [dD4] ) echo "You chose d (REMOVE)" ;;
+    [eE5] ) echo "You chose e (VIEW CURRENT)" ;;
+    [fF6] ) echo "You chose f (VIEW DELETED)" ;;
+    [gG7] ) echo "You chose g (QUIT)" ;;
+    * )     clear
+            echo "--INVALID INPUT--"
+            mainSelection ;;
+  esac
 }

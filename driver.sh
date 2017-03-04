@@ -5,19 +5,17 @@
 contactsArray=()
 
 #source ./add.sh
-#source ./find.sh
 #source ./remove.sh
 #source ./update.sh
 source ./utilities.sh
-#source ./menu.sh
 source ./interface.sh
+source ./find.sh
+
+#clear the main display
+clear
 
 #load data from database.txt into contacts array
 loadArray
-printArray
 
 #displays menu from interface.sh
-clear
-while [ $? -ne 1 ]; do
-  mainSelection
-done
+mainSelection
