@@ -1,2 +1,5 @@
-Name:Address:Phone:Email
 Christian:1001 Leah Ave:9630067:sylchristian
+Jason Jalufka:1610 N IH35:3618776243:jrj105@txstate.edu
+Ryan Jalufka:1610 N IH35:3617790446:rsj31@txstate.edu
+Abigail Barron:1122 Belvin St:123456789:aeb3@txstate.edu
+Matthew Cano:123 Hopkins St:7775554356:m_c123@txstate.edu
