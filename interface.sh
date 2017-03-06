@@ -19,7 +19,7 @@ processSelection() {
   case "$1" in
     [aA1] ) echo "You chose a (FIND)" 
             clear
-            findRecord ;;
+            findRecord find;;
     [bB2] ) echo "You chose b (ADD)" ;;
     [cC3] ) echo "You chose c (UPDATE)" ;;
     [dD4] ) echo "You chose d (REMOVE)" ;;

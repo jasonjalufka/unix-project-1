@@ -3,10 +3,12 @@
 
 
 findRecord() {
-   findRecordSelection 
+   operation="$1" #stores operation to be performed after record found
+   findRecordSelection "$operation"
 }
 
 findRecordSelection() {
+  operation="$1"
   read -r -p "Choose how you would like to search for a record:
   (1) Name
   (2) Address
@@ -16,36 +18,36 @@ findRecordSelection() {
   (6) CANCEL
   Selection is >" selection
 
-  processFind "$selection"
+  processFind "$selection" "$operation"
 }
 
 processFind() {
+  operation="$2"
   case "$1" in
     [aA1] ) clear
-              search name 0 ;;
+              search name 0 "$operation" ;;
     [bB2] ) clear
-              search address 1 ;;
+              search address 1 "$operation" ;;
     [cC3] ) clear
-              search phone 2 ;;
+              search phone 2 "$operation" ;;
     [dD4] ) clear
-              search email 3;;
+              search email 3 "$operation" ;;
     [eE5] ) clear
-              search keyword 4  ;;
+              search keyword 4 "$operation" ;;
     [fF6] ) clear
               mainSelection ;;
     [*]   ) clear echo " --INVALID INPUT-- "
-              findRecordSelection ;;
+              findRecordSelection "$operation" ;;
   esac
 }
 
 search() {
-
-   
+  operation="$3"
   searchField=$1 # name of search field
   fieldIndex=$2  # index to search in 'fields' array
   count=0        # amount of matching records
   index=0        # contacts array index
-  matches=()     # empty array that will hold matching records
+  matches=()     # initialize empty array that will hold matching records
   
   echo "Searching by $searchField"
   read -r -p "$searchField to search: " search
@@ -56,8 +58,8 @@ search() {
       IFS= read -r temp <<< "$i"
       shopt -s nocasematch
       if [[ "${temp}" == *"$search"* ]]; then
-        count=$(( count + 1 ))
-        #TODO add line to matches array 
+        matches+=("$temp") #add line to matches array
+        count=$(( count + 1 )) 
       fi
       index=$(( index + 1 ))
     done
@@ -67,12 +69,66 @@ search() {
       IFS=: read -a fields <<< "$i" # stores input into array "fields" and stores sequentially
       shopt -s nocasematch
         if [[ ${fields["$fieldIndex"]} == *$search* ]]; then
-          echo "Match found at index [$index]"
-          echo "$i"
-          count=$(( count + 1))
+          matches+=("$i") #add line to matches array
+          count=$(( count + 1 ))
         fi
-      index=$(( index + 1))
+      index=$(( index + 1 ))
     done
   fi
+  
+  if [ "$count" -gt "0" ]; then
+    displayResults matches[@] "$operation"
+  else
+    clear
+    printf "No matches were found, please try again:\n\n"
+    findRecordSelection "$operation"
+  fi   
+}
+
+displayResults() {
+  operation="$2"
+  declare -a results=("${!1}") 
+  divider=-----------------------------
+  index=0
+  for i in "${results[@]}"; do
+    IFS=: read -a fields <<< "$i"
+    index=$(( index + 1 ))
+    printf "%s) Name:    %s\n   Address: %s\n   Phone:   %s\n   Email:   %s\n$divider\n" "$index" "${fields[0]}" "${fields[1]}" "${fields[2]}" "${fields[3]}"
+  done
+  
+  stop=0
+  while [ "$stop" -ne "1" ]; do
+  read -r -p "Select a contact record:
+Selection >" record
+  
+    if [[ ( "$record" > "$index" ) || ( "$record" <  1 ) ]]; then
+      printf "Please enter a valid record selection:\n"
+    else 
+      contactsIndex=0
+      record=$(( $record - 1 ))
+      for i in "${contactsArray[@]}"; do
+        IFS= read -r temp <<< "$i"
+        shopt -s nocasematch
+        if [[ "${results["$record"]}" == "${temp}" ]]; then
+          processResult "$contactsIndex" "$operation"
+          break
+        fi
+        contactsIndex=$(( contactsIndex + 1 ))
+      done 
+      stop=1
+    fi
+  done 
+}
+
+processResult() {
+  operation="$2"
+  printf "\n\nThe index of the original record in the database is "$1", so now i can use that to call update and remove the correct indices in the array\n"
+  case "$operation" in
+    "find" ) echo "Operation Performed: Find" ;;
+    "update" ) echo "update" ;;
+    "remove" ) echo "remove" ;;
+    "add" ) echo "add" ;;
+    [*] ) echo "what's going on here?" ;;
+  esac  
 }
 
