@@ -1,4 +1,4 @@
-Christian:1001 Leah Ave:9630067:sylchristian
+Chris:1001 Leah Avenue:512-963-0067:c_s323@txstate.edu
 Jason Jalufka:1610 N IH35:3618776243:jrj105@txstate.edu
 Ryan Jalufka:1610 N IH35:3617790446:rsj31@txstate.edu
 Abigail Barron:1122 Belvin St:123456789:aeb3@txstate.edu

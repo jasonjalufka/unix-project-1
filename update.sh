@@ -24,7 +24,7 @@ processUpdate() {
   read -r -p "Phone: " phone
   read -r -p "Email: " email
   newRecord=""$name":"$address":"$phone":"$email""
-  "${contactsArray[$index]}"=("$newRecord")
+  contactsArray["$index"]=${newRecord}
   clear
   printf "Successfully updated the contact:\n%s\n" "$newRecord"
   mainSelection
