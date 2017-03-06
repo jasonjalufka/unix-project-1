@@ -6,7 +6,7 @@ contactsArray=()
 
 source ./add.sh
 source ./remove.sh
-#source ./update.sh
+source ./update.sh
 source ./utilities.sh
 source ./interface.sh
 source ./find.sh

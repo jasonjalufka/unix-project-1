@@ -125,7 +125,8 @@ processResult() {
   case "$operation" in
     "find" ) clear
              echo "Operation Performed: Find" ;;
-    "update" ) clear 
+    "update" ) clear
+               processUpdate "$1"
                echo "Operation Performed: Update" ;;
     "remove" ) clear
                processRemove "$1"

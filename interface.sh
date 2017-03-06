@@ -23,7 +23,8 @@ processSelection() {
     [bB2] ) echo "You chose b (ADD)"
             clear
             addRecord ;;
-    [cC3] ) echo "You chose c (UPDATE)" ;;
+    [cC3] ) echo "You chose c (UPDATE)" 
+            updateRecord ;;
     [dD4] ) echo "You chose d (REMOVE)"
             clear
             removeRecord ;;

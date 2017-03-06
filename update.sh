@@ -26,6 +26,6 @@ processUpdate() {
   newRecord=""$name":"$address":"$phone":"$email""
   "${contactsArray[$index]}"=("$newRecord")
   clear
-  printf "Successfully updated the contact:\n%s\n" "$newRecod"
+  printf "Successfully updated the contact:\n%s\n" "$newRecord"
   mainSelection
 }
