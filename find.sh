@@ -124,7 +124,8 @@ processResult() {
   operation="$2"
   printf "\n\nThe index of the original record in the database is "$1", so now i can use that to call update and remove the correct indices in the array\n"
   case "$operation" in
-    "find" ) echo "Operation Performed: Find" ;;
+    "find" ) echo "Operation Performed: Find"
+               mainSelection ;;
     "update" ) echo "update" ;;
     "remove" ) echo "remove" ;;
     "add" ) echo "add" ;;
