@@ -98,7 +98,7 @@ displayResults() {
   
   stop=0
   while [ "$stop" -ne "1" ]; do
-  read -r -p "Select a contact record:
+  read -r -p "Select a contact record to "$operation":
 Selection >" record
   
     if [[ ( "$record" > "$index" ) || ( "$record" <  1 ) ]]; then
@@ -122,14 +122,17 @@ Selection >" record
 
 processResult() {
   operation="$2"
-  printf "\n\nThe index of the original record in the database is "$1", so now i can use that to call update and remove the correct indices in the array\n"
   case "$operation" in
-    "find" ) echo "Operation Performed: Find"
-               mainSelection ;;
-    "update" ) echo "update" ;;
-    "remove" ) echo "remove" ;;
+    "find" ) clear
+             echo "Operation Performed: Find" ;;
+    "update" ) clear 
+               echo "Operation Performed: Update" ;;
+    "remove" ) clear
+               processRemove "$1"
+               echo "Operation Performed: Remove" ;;
     "add" ) echo "add" ;;
     [*] ) echo "what's going on here?" ;;
-  esac  
+  esac
+  mainSelection
 }
 

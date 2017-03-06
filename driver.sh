@@ -4,7 +4,7 @@
 # Initialize empty contacts array
 contactsArray=()
 
-#source ./add.sh
+source ./add.sh
 #source ./remove.sh
 #source ./update.sh
 source ./utilities.sh

@@ -19,13 +19,21 @@ processSelection() {
   case "$1" in
     [aA1] ) echo "You chose a (FIND)" 
             clear
-            findRecord find;;
-    [bB2] ) echo "You chose b (ADD)" ;;
+            findRecord find ;;
+    [bB2] ) echo "You chose b (ADD)"
+            clear
+            addRecord ;;
     [cC3] ) echo "You chose c (UPDATE)" ;;
-    [dD4] ) echo "You chose d (REMOVE)" ;;
-    [eE5] ) echo "You chose e (VIEW CURRENT)" ;;
+    [dD4] ) echo "You chose d (REMOVE)"
+            clear
+            removeRecord ;;
+    [eE5] ) clear 
+            printArray
+            mainSelection ;;
     [fF6] ) echo "You chose f (VIEW DELETED)" ;;
-    [gG7] ) echo "You chose g (QUIT)" ;;
+    [gG7] ) echo "You chose g (QUIT)"
+            saveDatabase
+            exit 0 ;;
     * )     clear
             echo "--INVALID INPUT--"
             mainSelection ;;

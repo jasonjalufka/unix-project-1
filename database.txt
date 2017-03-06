@@ -3,3 +3,6 @@ Jason Jalufka:1610 N IH35:3618776243:jrj105@txstate.edu
 Ryan Jalufka:1610 N IH35:3617790446:rsj31@txstate.edu
 Abigail Barron:1122 Belvin St:123456789:aeb3@txstate.edu
 Matthew Cano:123 Hopkins St:7775554356:m_c123@txstate.edu
+Sam Barron:1122 Belvin St:1231231234:sam@cat.com
+Bob Miller:123 Example St:3526475647:bob@mail.com
+Jason Jalufka:1234:12345:jason@mail.com
