@@ -1,7 +1,6 @@
 #!/bin/bash
 # Find a record in contacts database
 
-
 findRecord() {
    operation="$1" #stores operation to be performed after record found
    findRecordSelection "$operation"
