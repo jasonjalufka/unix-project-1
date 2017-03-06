@@ -35,7 +35,8 @@ processFind() {
               search keyword 4 "$operation" ;;
     [fF6] ) clear
               mainSelection ;;
-    [*]   ) clear echo " --INVALID INPUT-- "
+         *) clear 
+            echo " --INVALID INPUT-- "
               findRecordSelection "$operation" ;;
   esac
 }
