@@ -10,7 +10,7 @@ loadArray() {
 printArray() {
   header="Contact Database (Name:Address:Phone:Email)"
   divider="-------------------------------------------"
-  printf "%s\n%s\n%s\n" "$header" "$divider" "${contactsArray[@]}"
+  printf "%s\n%s\n%s" "$header" "$divider" "${contactsArray[@]}"
   printf "\n"
 }
 

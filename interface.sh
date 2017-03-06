@@ -8,7 +8,6 @@ mainSelection() {
 (c) Update a record
 (d) Remove a record
 (e) View current records
-(f) View deleted records
 (g) Quit
 Selection is > " selection
 
@@ -31,7 +30,6 @@ processSelection() {
     [eE5] ) clear 
             printArray
             mainSelection ;;
-    [fF6] ) echo "You chose f (VIEW DELETED)" ;;
     [gG7] ) echo "You chose g (QUIT)"
             saveDatabase
             exit 0 ;;
