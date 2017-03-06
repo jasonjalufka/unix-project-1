@@ -11,13 +11,20 @@ removeRecord() {
   findRecord remove #searches for record to remove, passes "remove" operation flag
 }
 
+#processRemove() {
+#  index="$1"
+#  
+#  while [ "$exit" -ne 1 ]; do
+#    read -r -p "Are you sure you wish to remove the following record?
+#    "${contactsArray[$index]}"" confirm 
+#    case "$confirm" in
+#      [yY] ) printf "\nRemoving contact record:" 
+#  done
+#}
 processRemove() {
   index="$1"
-  
-  while [ "$exit" -ne 1 ]; do
-    read -r -p "Are you sure you wish to remove the following record?
-    "${contactsArray[$index]}"" confirm 
-    case "$confirm" in
-      [yY] ) printf "\nRemoving contact record:" 
-  done
+        printf '\n'
+       printf "\nRemoving contact record:"
+          unset contactsArray[$index]
+        printf '\n'
 }
