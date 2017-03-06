@@ -23,8 +23,9 @@ removeRecord() {
 #}
 processRemove() {
   index="$1"
-        printf '\n'
+       printf '\n'
        printf "\nRemoving contact record:"
+       printf "%s\n" "${contactsArray[$index]}" > deleted.txt
           unset contactsArray[$index]
         printf '\n'
 }
