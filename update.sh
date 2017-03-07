@@ -17,12 +17,12 @@ updateRecord() {
 
 processUpdate() {
   index="$1"
-
-  printf "%s\nPlease enter the information you wish to update: "
-  read -r -p "Name: " name
-  read -r -p "Address: " address
-  read -r -p "Phone: " phone
-  read -r -p "Email: " email
+  divider=--------------------------------------------------------
+  printf "\nPlease enter the updated contact information:\n%s\n%s\n%s\n" "$divider" "${contactsArray["$index"]}" "$divider"
+  read -r -p "-Name: " name
+  read -r -p "-Address: " address
+  read -r -p "-Phone: " phone
+  read -r -p "-Email: " email
   newRecord=""$name":"$address":"$phone":"$email""
   contactsArray["$index"]=${newRecord}
   clear
