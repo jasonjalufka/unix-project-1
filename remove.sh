@@ -1,31 +1,35 @@
 #!/bin/bash
 # Removes an entry from the database
 
-#printf '\n'
-#echo "Whose records would you like to remove?"
-#read delete
-#cat database.txt | grep ${delete} >> deleted.txt
-#sed -i /${delete}/d 'database.txt'
-
 removeRecord() {
   findRecord remove #searches for record to remove, passes "remove" operation flag
 }
 
-#processRemove() {
-#  index="$1"
-#  
-#  while [ "$exit" -ne 1 ]; do
-#    read -r -p "Are you sure you wish to remove the following record?
-#    "${contactsArray[$index]}"" confirm 
-#    case "$confirm" in
-#      [yY] ) printf "\nRemoving contact record:" 
-#  done
-#}
 processRemove() {
   index="$1"
-       printf '\n'
-       printf "\nRemoving contact record:"
-       printf "%s\n" "${contactsArray[$index]}" > deleted.txt
-          unset contactsArray[$index]
-        printf '\n'
+  read -r -p "Are you sure you wish to remove the following record? (y/n)
+  ${contactsArray[$index]}
+  > " confirm
+
+  stop=0
+  while [ "$stop" -ne "1" ]; do
+    case "$confirm" in
+      [yY] ) stop=1
+             remove $index ;;
+      [nN] ) clear
+             stop=1
+             printf "--Remove operation aborted--\n"
+             mainSelection ;;
+         * ) printf "Please choose a valid option (y/n)\n" ;;
+    esac
+  done
+}
+
+remove() {
+  printf "\nRemoving contact record:\n"
+  printf "%s\n" "${contactsArray[$index]}" > deleted.txt
+  unset contactsArray["$1"]
+  clear
+  mainSelection
+  printf "Successfully removed contact\n"
 }
