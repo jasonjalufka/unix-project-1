@@ -22,7 +22,8 @@ processSelection() {
     [bB2] ) echo "You chose b (ADD)"
             clear
             addRecord ;;
-    [cC3] ) echo "You chose c (UPDATE)" 
+    [cC3] ) echo "You chose c (UPDATE)"
+            clear 
             updateRecord ;;
     [dD4] ) echo "You chose d (REMOVE)"
             clear
@@ -31,6 +32,7 @@ processSelection() {
             printArray
             mainSelection ;;
     [gG7] ) echo "You chose g (QUIT)"
+            clear
             saveDatabase
             exit 0 ;;
     * )     clear
