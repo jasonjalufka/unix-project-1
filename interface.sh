@@ -16,7 +16,7 @@ processSelection "$selection"
 
 processSelection() {
   case "$1" in
-    [aA1] ) echo "You chose a (FIND)" 
+    [aA1] ) echo "You chose a (FIND)"
             clear
             findRecord find ;;
     [bB2] ) echo "You chose b (ADD)"
@@ -28,7 +28,7 @@ processSelection() {
     [dD4] ) echo "You chose d (REMOVE)"
             clear
             removeRecord ;;
-    [eE5] ) clear 
+    [eE5] ) clear
             printArray
             mainSelection ;;
     [gG7] ) echo "You chose g (QUIT)"
